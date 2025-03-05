@@ -12,6 +12,12 @@
 `pnpm run build`
 
 
+### 项目单测
+
+`pnpm run test` 或 `lerna run test`
+
+
+
 ### 如何新建子应用
 — 1.复制 /template目录下的 vite-react-tpl-app 子应用模板到 /applications 下
 — 2.更改子应用文件名称、package.json的name

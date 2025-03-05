@@ -6,15 +6,12 @@
   ],
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
-    "build": "npm-run-all --parallel build:* && node ./bin/after-build.js",
+    "build": "lerna run build && node ./bin/after-build.js",
+    "test": "lerna run test",
     "dev:app-main": "cd ./applications/app-main && npm run dev -- --port 3000",
     "dev:app-demo-1": "cd ./applications/app-demo-1 && npm run dev -- --port 5001",
     "dev:app-demo-2": "cd ./applications/app-demo-2 && npm run dev -- --port 5002",
-    "dev:app-demo-3": "cd ./applications/app-demo-3 && npm run dev -- --port 5003",
-    "build:app-main": "pnpm --C applications/app-main build",
-    "build:app-demo-1": "pnpm --C applications/app-demo-1 build",
-    "build:app-demo-2": "pnpm --C applications/app-demo-2 build",
-    "build:app-demo-3": "pnpm --C applications/app-demo-3 build"
+    "dev:app-demo-3": "cd ./applications/app-demo-3 && npm run dev -- --port 5003"
   },
   "devDependencies": {
     "lerna": "^8.2.0",
