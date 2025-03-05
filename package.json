@@ -9,6 +9,7 @@
     "dev": "npm-run-all --parallel dev:*",
     "build": "lerna run build && node ./bin/after-build.js",
     "test": "lerna run test",
+    "commit": "git-cz",
     "dev:app-main": "cd ./applications/app-main && npm run dev -- --port 3000",
     "dev:app-demo-1": "cd ./applications/app-demo-1 && npm run dev -- --port 5001",
     "dev:app-demo-2": "cd ./applications/app-demo-2 && npm run dev -- --port 5002",
@@ -18,7 +19,9 @@
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
     "@eslint/js": "^9.19.0",
+    "commitizen": "^4.3.1",
     "commitlint": "^19.7.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
@@ -30,5 +33,10 @@
     "prettier": "^3.5.1",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.22.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
