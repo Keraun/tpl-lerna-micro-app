@@ -12,7 +12,11 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "ahooks": "^3.8.4",
+    "antd": "^5.24.1",
+    "axios": "^1.7.9",
     "classnames": "^2.5.1",
+    "promise-polyfill": "^8.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.2.0"
