@@ -27,7 +27,4 @@ declare module '*.module.less' {
   export default classes;
 }
 
-// declare global {
-//   let TextEncoder: typeof import('text-encoding').TextEncoder;
-//   let TextDecoder: typeof import('text-encoding').TextDecoder;
-// }
+declare module 'text-encoding';
