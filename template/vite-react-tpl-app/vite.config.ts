@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import { visualizer } from 'rollup-plugin-visualizer';
 import {
-  DEFAULT_DEV_PORT,
   USE_MOCK_API,
   DEV_PORXY_CONFIG,
 } from "./config/dev.config.ts";
@@ -55,7 +54,6 @@ export default defineConfig({
     },
   },
   server: {
-    port: DEFAULT_DEV_PORT || 3000,
     proxy: DEV_PORXY_CONFIG,
   },
 });

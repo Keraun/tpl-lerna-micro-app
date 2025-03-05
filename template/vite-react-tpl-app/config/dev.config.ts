@@ -1,5 +1,4 @@
-// 默认dev启动端口号
-export const DEFAULT_DEV_PORT = 3000;
+
 // 使用mock.js api 模拟(只在dev环境生效)
 export const USE_MOCK_API = true;
 // 配置本地dev代理转发服务器
