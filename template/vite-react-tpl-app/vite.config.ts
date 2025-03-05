@@ -45,6 +45,7 @@ export default defineConfig({
   },
   build: {
     cssCodeSplit: true,
+    assetsDir: './',
     rollupOptions: {
       output: {
         manualChunks: {
