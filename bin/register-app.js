@@ -12,8 +12,8 @@ const MAIN_APP_FILE_NAME = "app-main";
 // 子应用注册
 const SUB_APP_LIST = [
   {
-    fileName: "app-demo-1",
-    routerName: "appdemo1",
+    fileName: "app-demo-1", // 项目文件名
+    routerName: "appdemo1", // 构建后的路由名称
   },
   {
     fileName: "app-demo-2",
