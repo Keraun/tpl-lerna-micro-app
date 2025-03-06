@@ -10,10 +10,10 @@
     "build": "lerna run build && node ./bin/after-build.js",
     "test": "lerna run test",
     "commit": "git-cz",
-    "dev:app-main": "cd ./applications/app-main && npm run dev -- --port 3000",
-    "dev:app-demo-1": "cd ./applications/app-demo-1 && npm run dev -- --port 5001",
-    "dev:app-demo-2": "cd ./applications/app-demo-2 && npm run dev -- --port 5002",
-    "dev:app-demo-3": "cd ./applications/app-demo-3 && npm run dev -- --port 5003",
+    "dev:app-main": "pnpm --filter @memo/mainapp  dev --port 3000",
+    "dev:app-demo-1": "pnpm --filter @memo/subapp-1  dev --port 5001",
+    "dev:app-demo-2": "pnpm --filter @memo/subapp-2  dev --port 5002",
+    "dev:app-demo-3": "pnpm --filter @memo/subapp-3  dev --port 5003",
     "prepare": "husky"
   },
   "devDependencies": {
