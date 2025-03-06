@@ -61,7 +61,7 @@ const __dirname = dirname(__filename);
     },
   ]);
 
-  const fullPackageName = `@memoapp/${finallyFolderName}`;
+  const fullPackageName = `@memoadmin/${finallyFolderName}`;
 
   //步骤1:  复制模版文件夹到 applications 目录
   const templatePath = path.join(__dirname, '..', 'template', template);
