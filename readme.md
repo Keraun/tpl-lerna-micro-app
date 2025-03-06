@@ -53,9 +53,13 @@ root项目添加依赖,-W 示例[lodash]:
 方案一: 运行命令
 `npm run addnewapp`
 
-方案二:
+如果对子应用运行端口需要改动, 请到根目录的package.json里scripts进行修改
 
-— 1.复制 /template目录下的 vite-react-tpl-app 子应用模板到 /applications 下
-— 2.更改子应用文件名称、package.json的name, 以@memoapp为前缀,格式为: @memoapp/具体的项目名
-— 3.注册子应用构建,注册地址在 /bin/register-app.json 的 subapp/list 变量里(ps:router是页面上线后的访问路由配置)
-— 4.在根目录的package.json 添加子应用的 scripts 运行命令, 比如 dev:app-demo-1
+方案二: 手动操作
+
+— 1.[复制] /template目录下的 vite-react-tpl-app 子应用模板到 /applications 下
+— 2.[改名] 更改子应用文件名称[app-项目名]
+
+- 3.[改名] 更改package.json的name,[@memoapp/app-项目名]
+  — 4.[注册] 注册子应用构建,注册地址在 /bin/register-app.json 的 subapp/list 变量里(ps:router是页面上线后的访问路由配置)
+  — 5.[命令] 在根目录的package.json 添加子应用的 scripts 运行命令, 比如 dev:app-demo-1
