@@ -4,3 +4,5 @@ dist
 .ds_Store
 
 **/stats.html
+
+pnpm-lock.yaml

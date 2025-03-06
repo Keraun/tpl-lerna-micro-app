@@ -1,0 +1,27 @@
+{
+  "buildPath": "dist",
+  "mainApp": {
+    "name": "app-main",
+    "packageName": "@memoapp/app-main"
+  },
+  "subApp": {
+    "buildPath": "subapp",
+    "list": [
+      {
+        "name": "app-demo-1",
+        "router": "app-demo-1",
+        "packageName": "@memoapp/app-demo-1"
+      },
+      {
+        "name": "app-demo-2",
+        "router": "app-demo-2",
+        "packageName": "@memoapp/app-demo-2"
+      },
+      {
+        "name": "app-demo-3",
+        "router": "app-demo-3",
+        "packageName": "@memoapp/app-demo-2"
+      }
+    ]
+  }
+}
