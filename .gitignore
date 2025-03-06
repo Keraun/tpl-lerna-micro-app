@@ -3,6 +3,6 @@ dist
 # pnpm-lock.yaml
 .ds_Store
 
+stats.html
 **/stats.html
-
 pnpm-lock.yaml
