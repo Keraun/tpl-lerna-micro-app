@@ -1,8 +1,7 @@
 import { useCallback, useContext, useEffect } from 'react';
 import { Button } from 'antd';
 import { GLOBAL_CONTEXT } from '@/context';
-import { useRequest } from 'ahooks';
-import request from '@/lib/request';
+// import request from '@/lib/request';
 import DemoComponent from '@/components/demo';
 import useHomeHook from './useHomeHook';
 
@@ -13,13 +12,11 @@ export default function Home() {
   const globalContext = useContext(GLOBAL_CONTEXT);
   const { testData } = useHomeHook({ initTestData: 1 });
 
-  const { data, error, loading } = useRequest(async () => {
-    const response = await request('/api/user', {
-      params: { test: 1 },
-      data: { test: 2 },
-    });
-    return response;
-  });
+  // const response = await request('/api/user', {
+  //   params: { test: 1 },
+  //   data: { test: 2 },
+  // });
+  // return response;
 
   useEffect(() => {}, []);
 
@@ -28,7 +25,6 @@ export default function Home() {
     // debugger;
   }, []);
 
-  console.log('api mock data', data, error, loading);
   console.log('globalContext', globalContext);
   console.log('useHomeHook testData', testData.current);
 
