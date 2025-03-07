@@ -4,8 +4,8 @@
     "name": "app-main",
     "packageName": "@memo-admin/app-main"
   },
-  "subApp": {
-    "buildPath": "subapp",
+  "childApp": {
+    "buildPath": "child-app",
     "list": [
       {
         "name": "app-demo-1",

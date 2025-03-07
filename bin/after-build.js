@@ -13,8 +13,8 @@ const appConfig = JSON.parse(
 const FINAL_BUILD_DIST_PATH = path.join(ROOT_PATH, appConfig?.buildPath);
 
 // 最后构建产物子应用的dist路径
-function getFinalSubAppDistPath(appRouterName = '') {
-  return path.join(FINAL_BUILD_DIST_PATH, appConfig?.subApp?.buildPath, appRouterName);
+function getFinalchildAppDistPath(appRouterName = '') {
+  return path.join(FINAL_BUILD_DIST_PATH, appConfig?.childApp?.buildPath, appRouterName);
 }
 
 // 获取应用路径的path
@@ -39,23 +39,23 @@ const MAIN_APP_DIST_PATH = getAppDistPath(appConfig?.mainApp?.name);
     // 复制主应用 dist 文件
     await execPromise(`cp -rf ${MAIN_APP_DIST_PATH}/* ${FINAL_BUILD_DIST_PATH}`);
 
-    await execPromise(`mkdir -p ${getFinalSubAppDistPath('')}`);
+    await execPromise(`mkdir -p ${getFinalchildAppDistPath('')}`);
 
-    for (const subapp of appConfig?.subApp?.list) {
-      const source = getAppDistPath(subapp?.name);
+    for (const childApp of appConfig?.childApp?.list) {
+      const source = getAppDistPath(childApp?.name);
 
-      const routerName = subapp?.router || subapp?.name || 'unknow';
-      const target = getFinalSubAppDistPath(routerName);
+      const routerName = childApp?.router || childApp?.name || 'unknow';
+      const target = getFinalchildAppDistPath(routerName);
 
       if (!fs.existsSync(source)) {
-        console.warn(`[ 跳过] ${subapp} 无构建产物`);
+        console.warn(`[ 跳过] ${childApp} 无构建产物`);
         continue;
       }
 
       await execPromise(`cp -rf ${source} ${target}`);
 
       console.log(
-        `✅ 完成子应用 ${subapp.name} 的dist产物聚合到 /${appConfig?.buildPath}/${appConfig?.subApp?.buildPath}/${routerName}`
+        `✅ 完成子应用 ${childApp.name} 的dist产物聚合到 /${appConfig?.buildPath}/${appConfig?.childApp?.buildPath}/${routerName}`
       );
     }
   } catch (error) {

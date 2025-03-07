@@ -77,7 +77,7 @@ const __dirname = dirname(__filename);
   //步骤3: 注册app, 更新bin/register-app.json 文件夹的数据
   const appJsonPath = path.join(__dirname, '..', 'bin/register-app.json');
   const appJson = await fs.readJson(appJsonPath);
-  appJson.subApp.list.push({
+  appJson.childApp.list.push({
     name: finallyFolderName,
     router: rouerName,
     packageName: fullPackageName,
