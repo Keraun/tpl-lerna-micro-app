@@ -12,8 +12,7 @@ export default function Demo(props: IDemoProps) {
 
   console.log('test', test);
 
-  const { testDemoData } = useDemoHook({ initDemoData: 2 });
-
+  const { testDemoData } = useDemoHook({ initDemoData: 2111 });
   useEffect(() => {});
 
   return (
