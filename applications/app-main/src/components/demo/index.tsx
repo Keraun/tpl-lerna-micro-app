@@ -10,15 +10,15 @@ interface IDemoProps {
 export default function Demo(props: IDemoProps) {
   const { test } = props;
 
-  console.log('test', test);
+  const { testDemoData } = useDemoHook({ initDemoData: 2 });
 
-  const { testDemoData } = useDemoHook({ initDemoData: 2111 });
   useEffect(() => {});
 
   return (
     <div className={classNames(styles.wrap, styles.test)}>
       <div>Demo</div>
       <div>useDemoHook testDemoData: {testDemoData.current}</div>
+      <div>{test}</div>
     </div>
   );
 }

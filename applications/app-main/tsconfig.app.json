@@ -24,6 +24,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*", "src/types/**/*"], // 包含类型声明文件路径
+  "include": ["src/**/*"], // 包含类型声明文件路径
   "exclude": ["node_modules"]
 }
