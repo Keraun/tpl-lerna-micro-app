@@ -69,6 +69,9 @@ export default defineConfig({
     include: ['axios', 'stream-browserify'],
   },
   server: {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
     port: DEFAULT_DEV_PORT || 3000,
     proxy: DEV_PORXY_CONFIG,
   },
