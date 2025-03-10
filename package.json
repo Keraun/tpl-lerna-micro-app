@@ -16,9 +16,7 @@
     "prepare": "husky install",
     "dev:app-main": "pnpm --filter @memo-admin/app-main dev --port 3000",
     "dev:app-demo-1": "pnpm --filter @memo-admin/app-demo-1 dev --port 5000",
-    "dev:app-demo-2": "pnpm --filter @memo-admin/app-demo-2 dev --port 5001",
-    "dev:app-demo-3": "pnpm --filter @memo-admin/app-demo-3  dev  --host --port 5002",
-    "dev:app-demo-4": "pnpm --filter @memo-admin/app-demo-4 dev  --host --port 5003"
+    "dev:app-demo-2": "pnpm --filter @memo-admin/app-demo-2 dev --port 5001"
   },
   "dependencies": {
     "react": "^19.0.0",
