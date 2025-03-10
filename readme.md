@@ -64,5 +64,5 @@ root项目添加依赖,-W 示例[lodash]:
 — 2.[改名] 更改子应用文件名称[app-项目名]
 
 - 3.[改名] 更改package.json的name,[@memo-admin/app-项目名]
-  — 4.[注册] 注册子应用构建,注册地址在 /bin/register-app.json 的 childApp/list 变量里(ps:router是页面上线后的访问路由配置)
+  — 4.[注册] 注册子应用构建,注册地址在 /bin/register-app.json 的 applications 变量里(ps:router是页面上线后的访问路由配置)
   — 5.[命令] 在根目录的package.json 添加子应用的 scripts 运行命令, 比如 dev:app-demo-1

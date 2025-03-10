@@ -6,6 +6,9 @@
     "applications/*"
   ],
   "scripts": {
+    "app:start": "pm2 start server.cjs",
+    "app:restart": "pm2 restart server.cjs",
+    "app:stop": "pm2 stop server.cjs",
     "dev": "npm-run-all --parallel dev:*",
     "build": "lerna run build && node ./bin/after-build.js",
     "test": "lerna run test",
@@ -19,6 +22,9 @@
     "dev:app-demo-2": "pnpm --filter @memo-admin/app-demo-2 dev --port 5001"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "pm2": "^5.4.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
