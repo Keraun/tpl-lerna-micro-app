@@ -16,16 +16,6 @@
         "name": "app-demo-2",
         "router": "app-demo-2",
         "packageName": "@memo-admin/app-demo-2"
-      },
-      {
-        "name": "app-demo-3",
-        "router": "app-demo-3",
-        "packageName": "@memo-admin/app-demo-2"
-      },
-      {
-        "name": "app-demo-4",
-        "router": "app-demo-4",
-        "packageName": "@memo-admin/app-demo-4"
       }
     ]
   }
