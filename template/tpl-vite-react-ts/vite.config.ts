@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
-import path from 'path';
+import path, { resolve } from 'path';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { DEFAULT_DEV_PORT, USE_MOCK_API, DEV_PORXY_CONFIG } from './config/dev.config.ts';
 import { viteMockServe } from 'vite-plugin-mock';
@@ -43,6 +43,9 @@ export default defineConfig({
   build: {
     cssCodeSplit: true,
     rollupOptions: {
+      input: {
+        index: resolve(__dirname, 'index.html'),
+      },
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'promise-polyfill'],
