@@ -15,7 +15,7 @@ const FINAL_BUILD_DIST_PATH = path.join(ROOT_PATH, appConfig?.buildPath || '');
 const FINAL_BUILD_FLODER = path.join(FINAL_BUILD_DIST_PATH, appConfig?.buildFloder || '');
 
 // 最后构建产物应用的dist路径
-function getFinalAppsDistPath(appRouterName = '') {
+function getFinalAppDistPath(appRouterName = '') {
   return path.join(FINAL_BUILD_FLODER, appRouterName);
 }
 
@@ -37,22 +37,24 @@ function getAppDistPath(appFileName) {
     await execPromise(`mkdir -p ${FINAL_BUILD_FLODER}`);
 
     // 复制子应用 dist 文件
-    for (const apps of appConfig?.applications) {
-      const source = getAppDistPath(apps?.name);
+    for (const app of appConfig?.applications) {
+      const source = getAppDistPath(app?.name);
 
-      const routerName = apps?.router || apps?.name || 'unknow';
-      const target = getFinalAppsDistPath(routerName);
+      const routerName = app?.router || app?.name || 'unknow';
+      const target = getFinalAppDistPath(routerName);
 
       if (!fs.existsSync(source)) {
-        console.warn(`[ 跳过] ${apps?.name} 无构建产物`);
+        console.warn(`[ 跳过] ${app?.name} 无构建产物`);
         continue;
       }
 
       await execPromise(`cp -rf ${source} ${target}`);
+      if (app?.isMainApp) {
+        // 主应用同样复制一份信息
+        await execPromise(`cp -rf ${source} ${ROOT_PATH}`);
+      }
 
-      console.log(
-        `✅ 完成子应用 ${apps?.name} 的dist产物聚合到 /${appConfig?.buildPath}/${appConfig?.apps?.buildPath}/${routerName}`
-      );
+      console.log(`✅ 完成子应用 ${app?.name} 的dist产物聚合到 / ${routerName}`);
     }
   } catch (error) {
     console.error('❌  聚合失败:', error.message);

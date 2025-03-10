@@ -1,10 +1,11 @@
 {
   "buildPath": "dist",
-  "buildFloder": "admin-app",
+  "buildFloder": "microapp",
   "applications": [
     {
       "name": "app-main",
       "router": "app-main",
+      "isMainApp": true,
       "packageName": "@memo-admin/app-main"
     },
     {

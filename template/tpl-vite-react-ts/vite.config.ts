@@ -15,6 +15,7 @@ console.log('ENABLE_MOCK', ENABLE_MOCK_API);
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [
     react(),
     visualizer(),
