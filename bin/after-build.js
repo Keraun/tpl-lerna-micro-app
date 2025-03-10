@@ -35,9 +35,9 @@ const MAIN_APP_DIST_PATH = getAppDistPath(appConfig?.mainApp?.name);
   try {
     await execPromise(`rm -rf ${FINAL_BUILD_DIST_PATH}`);
     await execPromise(`mkdir -p ${FINAL_BUILD_DIST_PATH}`);
-
+    await execPromise(`mkdir -p ${FINAL_BUILD_DIST_PATH}/main-app`);
     // 复制主应用 dist 文件
-    await execPromise(`cp -rf ${MAIN_APP_DIST_PATH}/* ${FINAL_BUILD_DIST_PATH}`);
+    await execPromise(`cp -rf ${MAIN_APP_DIST_PATH}/* ${FINAL_BUILD_DIST_PATH}/main-app`);
 
     await execPromise(`mkdir -p ${getFinalchildAppDistPath('')}`);
 
