@@ -15,7 +15,6 @@ console.log('ENABLE_MOCK', ENABLE_MOCK_API);
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
   plugins: [
     react(),
     visualizer(),
@@ -45,6 +44,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(__dirname, 'index.html'),
+        demo: resolve(__dirname, 'demo.html'),
       },
       output: {
         manualChunks: {
