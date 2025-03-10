@@ -18,7 +18,7 @@ export default function Demo(props: IDemoProps) {
 
   return (
     <div className={classNames(styles.wrap, styles.test)}>
-      <div>Demo Component</div>
+      <div>Demo</div>
       <div>useDemoHook testDemoData: {testDemoData.current}</div>
     </div>
   );

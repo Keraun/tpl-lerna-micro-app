@@ -9,7 +9,7 @@ const __dirname = dirname(__filename);
 
 (async () => {
   // 步骤 1: 选择项目模版
-  const templateChoices = ['vite-react-tpl-app'];
+  const templateChoices = ['tpl-vite-react-ts'];
   const { template } = await inquirer.prompt([
     {
       type: 'list',

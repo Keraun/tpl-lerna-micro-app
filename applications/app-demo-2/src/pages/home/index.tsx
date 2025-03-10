@@ -1,10 +1,7 @@
-import { useCallback, useContext, useEffect } from 'react';
-import { Button } from 'antd';
+import { useContext, useEffect } from 'react';
 import { GLOBAL_CONTEXT } from '@/context';
-// import request from '@/lib/request';
 import DemoComponent from '@/components/demo';
 import useHomeHook from './useHomeHook';
-
 import './index.less';
 import styles from './index.module.less';
 
@@ -12,18 +9,7 @@ export default function Home() {
   const globalContext = useContext(GLOBAL_CONTEXT);
   const { testData } = useHomeHook({ initTestData: 1 });
 
-  // const response = await request('/api/user', {
-  //   params: { test: 1 },
-  //   data: { test: 2 },
-  // });
-  // return response;
-
   useEffect(() => {}, []);
-
-  const onBtnClickHandler = useCallback((target: any) => {
-    console.log('target', target);
-    // debugger;
-  }, []);
 
   console.log('globalContext', globalContext);
   console.log('useHomeHook testData', testData.current);
@@ -34,16 +20,7 @@ export default function Home() {
       <div>globalContext: {JSON.stringify(globalContext)}</div>
       <div>useHomeHook testData: {testData.current}</div>
       <div>
-        <Button type='primary' onClick={onBtnClickHandler}>
-          Button
-        </Button>
         <DemoComponent />
-      </div>
-      <div>
-        <a href='/test1'>跳转/test1</a>
-      </div>
-      <div>
-        <a href='/test1'>跳转/test2</a>
       </div>
     </div>
   );
