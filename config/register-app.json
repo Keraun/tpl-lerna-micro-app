@@ -1,0 +1,22 @@
+{
+  "buildPath": "dist",
+  "buildFloder": "microapp",
+  "applications": [
+    {
+      "name": "app-main",
+      "router": "app-main",
+      "isMainApp": true,
+      "packageName": "@memo-admin/app-main"
+    },
+    {
+      "name": "app-demo-1",
+      "router": "app-demo-1",
+      "packageName": "@memo-admin/app-demo-1"
+    },
+    {
+      "name": "app-demo-2",
+      "router": "app-demo-2",
+      "packageName": "@memo-admin/app-demo-2"
+    }
+  ]
+}
