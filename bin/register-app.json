@@ -1,6 +1,8 @@
 {
   "buildPath": "dist",
+  "buildFloder": "admin-app",
   "mainApp": {
+    "buildPath": "main-app",
     "name": "app-main",
     "packageName": "@memo-admin/app-main"
   },

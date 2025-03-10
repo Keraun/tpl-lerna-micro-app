@@ -10,11 +10,20 @@ const appConfig = JSON.parse(
 );
 
 // 最后构建产物的dist路径
-const FINAL_BUILD_DIST_PATH = path.join(ROOT_PATH, appConfig?.buildPath);
+const FINAL_BUILD_DIST_PATH = path.join(ROOT_PATH, appConfig?.buildPath || '');
+// 最后构建产物的文件夹路径
+const FINAL_BUILD_FLODER = path.join(FINAL_BUILD_DIST_PATH, appConfig?.buildFloder || '');
+// 最后构建产物的主应用文件夹路径
+const FINAL_BUILD_MAIN_APP_FLODER = path.join(
+  FINAL_BUILD_FLODER,
+  appConfig?.mainApp?.buildPath || ''
+);
+
+console.log('FINAL_BUILD_MAIN_APP_FLODER', FINAL_BUILD_MAIN_APP_FLODER);
 
 // 最后构建产物子应用的dist路径
 function getFinalchildAppDistPath(appRouterName = '') {
-  return path.join(FINAL_BUILD_DIST_PATH, appConfig?.childApp?.buildPath, appRouterName);
+  return path.join(FINAL_BUILD_FLODER, appConfig?.childApp?.buildPath, appRouterName);
 }
 
 // 获取应用路径的path
@@ -35,12 +44,14 @@ const MAIN_APP_DIST_PATH = getAppDistPath(appConfig?.mainApp?.name);
   try {
     await execPromise(`rm -rf ${FINAL_BUILD_DIST_PATH}`);
     await execPromise(`mkdir -p ${FINAL_BUILD_DIST_PATH}`);
-    await execPromise(`mkdir -p ${FINAL_BUILD_DIST_PATH}/main-app`);
+    await execPromise(`mkdir -p ${FINAL_BUILD_FLODER}`);
+    await execPromise(`mkdir -p ${FINAL_BUILD_MAIN_APP_FLODER}`);
     // 复制主应用 dist 文件
-    await execPromise(`cp -rf ${MAIN_APP_DIST_PATH}/* ${FINAL_BUILD_DIST_PATH}/main-app`);
+    await execPromise(`cp -rf ${MAIN_APP_DIST_PATH}/* ${FINAL_BUILD_MAIN_APP_FLODER}`);
 
     await execPromise(`mkdir -p ${getFinalchildAppDistPath('')}`);
 
+    // 复制子应用 dist 文件
     for (const childApp of appConfig?.childApp?.list) {
       const source = getAppDistPath(childApp?.name);
 
