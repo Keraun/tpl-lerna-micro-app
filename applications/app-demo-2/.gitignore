@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+stats.html
+**/stats.html
+pnpm-lock.yaml

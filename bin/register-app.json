@@ -26,6 +26,11 @@
         "name": "app-demo-4",
         "router": "app-demo-4",
         "packageName": "@memo-admin/app-demo-4"
+      },
+      {
+        "name": "app-demo-1",
+        "router": "app-demo-1",
+        "packageName": "@memo-admin/app-demo-1"
       }
     ]
   }
