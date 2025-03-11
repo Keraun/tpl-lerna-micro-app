@@ -71,5 +71,8 @@ export default defineConfig({
   server: {
     port: DEFAULT_DEV_PORT || 3000,
     proxy: DEV_PORXY_CONFIG,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   },
 });
