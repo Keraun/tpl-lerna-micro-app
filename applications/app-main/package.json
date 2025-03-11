@@ -20,6 +20,7 @@
     }
   },
   "dependencies": {
+    "@micro-zoe/micro-app": "1.0.0-rc.22",
     "axios": "^1.7.9",
     "classnames": "^2.5.1",
     "promise-polyfill": "^8.3.0",

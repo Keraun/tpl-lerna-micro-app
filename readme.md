@@ -28,7 +28,7 @@ root项目添加依赖,-W 示例[lodash]:
 `pnpm add lodash -r --filter '@memo-admin/*'`
 
 [某个子应用]添加依赖, 示例[lodash]:
-`pnpm add lodash -r --filter '@memo-admin/mainapp'`
+`pnpm add lodash -r --filter '@memo-admin/app-main'`
 
 ```pnpm参数
 -D: 添加到 devDependencies
