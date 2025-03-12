@@ -1,0 +1,54 @@
+{
+  "token": {
+    "colorPrimary": "#2f54eb",
+    "colorInfo": "#2f54eb",
+    "colorSuccess": "#13c29c",
+    "colorTextBase": "#222222",
+    "colorBgBase": "#ffffff",
+    "borderRadius": 4,
+    "wireframe": false,
+    "colorWarning": "#fa8c16",
+    "boxShadow": "\n      0 6px 16px 0 rgba(0, 0, 0, 0.04),\n      0 3px 6px -4px rgba(0, 0, 0, 0.6),\n      0 9px 28px 8px rgba(0, 0, 0, 0.05)\n    ",
+    "boxShadowSecondary": "\n      0 6px 16px 0 rgba(0, 0, 0, 0.04),\n      0 3px 6px -4px rgba(0, 0, 0, 0.06),\n      0 9px 28px 8px rgba(0, 0, 0, 0.03)\n    ",
+    "colorError": "#ff4e51"
+  },
+  "components": {
+    "Dropdown": {
+      "paddingBlock": 4
+    },
+    "Pagination": {
+      "itemSize": 28
+    },
+    "Cascader": {
+      "fontSize": 14
+    },
+    "Checkbox": {
+      "fontSize": 14
+    },
+    "Rate": {
+      "starColor": "rgb(250,173,20)"
+    },
+    "Slider": {
+      "handleActiveColor": "rgb(47,84,235)",
+      "trackBg": "rgba(47,85,235,0.6)",
+      "handleColor": "rgba(47,85,235,0.6)",
+      "dotActiveBorderColor": "rgba(47,85,235,0.6)",
+      "trackHoverBg": "rgba(47,85,235,0.6)"
+    },
+    "Avatar": {
+      "colorTextPlaceholder": "rgba(47,85,235,0.2)"
+    },
+    "Image": {
+      "colorBgMask": "rgba(41,64,155,0.1)"
+    },
+    "Tree": {
+      "directoryNodeSelectedBg": "rgb(47,84,235)"
+    },
+    "Message": {
+      "boxShadow": "      0 6px 12px 0 rgba(0, 0, 0, 0.02),      0 3px 6px -4px rgba(0, 0, 0, 0.02),      0 9px 28px 8px rgba(0, 0, 0, 0.05)    "
+    },
+    "Modal": {
+      "boxShadow": "      0 6px 12px 0 rgba(0, 0, 0, 0.02),      0 3px 6px -4px rgba(0, 0, 0, 0.02),      0 9px 28px 8px rgba(0, 0, 0, 0.05)    "
+    }
+  }
+}

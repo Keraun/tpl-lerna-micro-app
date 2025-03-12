@@ -10,13 +10,12 @@ const IS_DEV_ENV = process.env.NODE_ENV === 'development';
 
 // 开启mock服务
 const ENABLE_MOCK_API = IS_DEV_ENV && USE_MOCK_API;
-console.log('ENABLE_MOCK', ENABLE_MOCK_API);
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    visualizer(),
+    visualizer({ gzipSize: true }),
     viteMockServe({
       mockPath: './__mock__', // Mock 文件存放目录
       logger: true, // 控制台显示请求日志
@@ -28,13 +27,14 @@ export default defineConfig({
       '@': path.join(__dirname, 'src'),
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'], // 导入时想要忽略的扩展名列表
+    preserveSymlinks: false, // 启用此选项会使 Vite 通过原始文件路径确定文件身份
   },
   build: {
     cssCodeSplit: true,
     rollupOptions: {
       input: {
         index: resolve(__dirname, 'index.html'),
-        demo: resolve(__dirname, 'demo.html'),
+        demo: resolve(__dirname, 'login.html'),
       },
     },
   },
