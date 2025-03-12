@@ -13,7 +13,7 @@ export default function App() {
   return (
     <GLOBAL_CONTEXT.Provider value={initGlobalValue}>
       <PAGE_CONTEXT.Provider value={initPageValue}>
-        <Demo test={'demo page'} />
+        <Demo test={'login page'} />
       </PAGE_CONTEXT.Provider>
     </GLOBAL_CONTEXT.Provider>
   );

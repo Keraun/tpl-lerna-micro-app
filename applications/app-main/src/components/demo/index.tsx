@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import classNames from 'classnames';
 import useDemoHook from './useDemoHook';
 import styles from './index.module.less';
-
 interface IDemoProps {
   test?: number | string;
 }

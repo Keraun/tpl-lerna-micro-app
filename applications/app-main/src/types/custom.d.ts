@@ -26,3 +26,12 @@ declare module '*.module.less' {
   const classes: { readonly [key: string]: string };
   export default classes;
 }
+declare module '*.json' {
+  export interface ThemeConfig {
+    token?: Record<string, string | number>;
+    components?: Record<string, Record<string, string | number>>;
+  }
+
+  const config: ThemeConfig;
+  export default config;
+}

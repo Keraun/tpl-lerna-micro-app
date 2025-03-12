@@ -7,6 +7,8 @@ import App from './app';
 import microApp from '@micro-zoe/micro-app';
 microApp.start();
 
+window.microApp = microApp;
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
