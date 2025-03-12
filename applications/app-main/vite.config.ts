@@ -27,7 +27,6 @@ export default defineConfig({
       '@': path.join(__dirname, 'src'),
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'], // 导入时想要忽略的扩展名列表
-    preserveSymlinks: false, // 启用此选项会使 Vite 通过原始文件路径确定文件身份
   },
   build: {
     cssCodeSplit: true,

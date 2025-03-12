@@ -16,7 +16,7 @@ console.log('ENABLE_MOCK', ENABLE_MOCK_API);
 export default defineConfig({
   plugins: [
     react(),
-    visualizer(),
+    visualizer({ gzipSize: true }),
     viteMockServe({
       mockPath: './__mock__', // Mock 文件存放目录
       logger: true, // 控制台显示请求日志
