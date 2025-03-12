@@ -4,7 +4,6 @@ import path, { resolve } from 'path';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { DEFAULT_DEV_PORT, USE_MOCK_API, DEV_PORXY_CONFIG } from './config/dev.config.ts';
 import { viteMockServe } from 'vite-plugin-mock';
-import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 // 开发环境
 const IS_DEV_ENV = process.env.NODE_ENV === 'development';
@@ -23,21 +22,12 @@ export default defineConfig({
       logger: true, // 控制台显示请求日志
       enable: ENABLE_MOCK_API,
     }),
-    nodePolyfills({
-      include: ['stream'], // 显式包含 stream 的 polyfill
-    }),
   ],
   resolve: {
     alias: {
       '@': path.join(__dirname, 'src'),
-      // 将 Node.js  的 stream 模块映射到浏览器兼容的 polyfill
-      stream: 'stream-browserify',
     },
-    dedupe: [], // 强制 Vite 始终将列出的依赖项解析为同一副本
-    conditions: [], // 解决程序包中 情景导出 时的其他允许条件
-    mainFields: [], // 解析包入口点尝试的字段列表
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'], // 导入时想要忽略的扩展名列表
-    preserveSymlinks: false, // 启用此选项会使 Vite 通过原始文件路径确定文件身份
   },
   build: {
     cssCodeSplit: true,
@@ -45,11 +35,6 @@ export default defineConfig({
       input: {
         index: resolve(__dirname, 'index.html'),
         demo: resolve(__dirname, 'demo.html'),
-      },
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'promise-polyfill'],
-        },
       },
     },
   },
@@ -63,10 +48,6 @@ export default defineConfig({
         javascriptEnabled: true,
       },
     },
-  },
-  optimizeDeps: {
-    // 强制预构建 axios 相关依赖
-    include: ['axios', 'stream-browserify'],
   },
   server: {
     port: DEFAULT_DEV_PORT || 3000,

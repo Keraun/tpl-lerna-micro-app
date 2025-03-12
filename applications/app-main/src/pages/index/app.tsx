@@ -26,12 +26,12 @@ export default function App() {
         <div onClick={onSwitchTab('2')}>切换2</div>
 
         {microApp == '1' ? (
-          <micro-app name='my-app' url='http://localhost:5004/' iframe></micro-app>
+          <micro-app name='my-app' url='http://localhost:5000/' iframe></micro-app>
         ) : null}
         {microApp == '2' ? (
           <micro-app
             name='my-app-2'
-            url='http://localhost:5005/demo.html'
+            url='http://localhost:5001/demo.html'
             iframe
           ></micro-app>
         ) : null}
